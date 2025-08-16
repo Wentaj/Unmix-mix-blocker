@@ -26,7 +26,7 @@ The extension uses multiple approaches to ensure comprehensive coverage:
 1. **Background script**: Intercepts navigation events before they happen
 2. **Content script**: Monitors URL changes and DOM mutations
 3. **Injected script**: Intercepts browser APIs and link clicks in the page context
-4. **Mix detection**: Looks for the `<div class="badge-shape-wiz__text">Mix</div>` element to identify actual mix playlists
+4. **Mix detection**: Looks for the `&list=` and `&start_radio=1`
 
 ## Files included
 
