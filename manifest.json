@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Unmix",
+  "version": "1.02",
+  "description": "Prevents YouTube from automatically opening music videos in mixes",
+  "icons": { "16": "ikon16.png",
+           "48": "ikon48.png",
+          "128": "ikon128.png" },
+  "permissions": [
+    "activeTab",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "*://www.youtube.com/*",
+    "*://youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*", "*://youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["*://www.youtube.com/*", "*://youtube.com/*"]
+    }
+  ]
+}
