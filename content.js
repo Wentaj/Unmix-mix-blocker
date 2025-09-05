@@ -56,7 +56,7 @@ function handleUrlChange() {
     if (!definiteMixClicks.has(videoId)) {
       // This was not a definitive mix click, so remove the mix parameters
       if (videoId) {
-        const cleanUrl = `https://www.youtube.com/watch?v=${videoId}`;
+        const cleanUrl = `https://www.youtube.com/watch?v=${videoId}&`;
         if (cleanUrl !== location.href) {
           history.replaceState(null, '', cleanUrl);
           location.reload();
@@ -75,4 +75,5 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', handleUrlChange);
 } else {
   handleUrlChange();
+
 }
